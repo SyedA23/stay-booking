@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Beach Villa",
+    "location": "Goa",
+    "price": 8500,
+    "image": "https://picsum.photos/400/300?1"
+  },
+  {
+    "id": 2,
+    "title": "Royal Palace Stay",
+    "location": "Udaipur",
+    "price": 12000,
+    "image": "https://picsum.photos/400/300?2"
+  },
+  {
+    "id": 3,
+    "title": "Mountain View Cottage",
+    "location": "Manali",
+    "price": 6000,
+    "image": "https://picsum.photos/400/300?3"
+  }
+]

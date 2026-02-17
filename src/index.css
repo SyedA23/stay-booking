@@ -20,7 +20,6 @@
 /* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -32,6 +31,7 @@ a:hover {
 
 body {
   margin: 0;
+  font-family: "Inter", sans-serif;
   display: flex;
   place-items: center;
   min-width: 320px;
