@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <section className="relative h-screen">
@@ -16,12 +18,12 @@ export default function Home() {
             Discover curated luxury villas and unforgettable stays.
           </p>
 
-          <a
-            href="/stays"
+          <Link
+            to="/stays"
             className="mt-8 inline-block bg-white text-black px-8 py-3 rounded-full"
           >
             Explore Villas
-          </a>
+          </Link>
         </div>
       </div>
     </section>
