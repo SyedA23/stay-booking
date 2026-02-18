@@ -1,28 +1,31 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [dark, setDark] = useState(false);
-
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    setDark((p) => !p);
-  };
-
   return (
-    <header className="border-b bg-white dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-        <h2 className="font-bold text-xl">StayEase</h2>
+    <div className="bg-[#fffff] py-6">
+      {/* Floating navbar */}
+      <header className="max-w-[1200px] mx-auto bg-[#fffff] text-black rounded-lg px-8 py-4 shadow-md flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 bg-yellow-500 rounded-sm" />
+          <h1 className="font-semibold tracking-wide">StayEase</h1>
+        </div>
 
-        <nav className="flex gap-6 items-center">
-          <Link to="/">Home</Link>
-          <Link to="/stays">Stays</Link>
-
-          <button onClick={toggleTheme} className="border px-3 py-1 rounded">
-            {dark ? "Light" : "Dark"}
-          </button>
+        {/* Navigation */}
+        <nav className="hidden md:flex gap-8 text-sm">
+          <Link to="/" className="hover:text-yellow-400">
+            Homepage
+          </Link>
+          <Link to="/stays" className="hover:text-yellow-400">
+            Villas
+          </Link>
+          <a className="hover:text-yellow-400">Experiences</a>
+          <a className="hover:text-yellow-400">News</a>
+          <a className="hover:text-yellow-400">Careers</a>
         </nav>
-      </div>
-    </header>
+
+        {/* CTA */}
+      </header>
+    </div>
   );
 }

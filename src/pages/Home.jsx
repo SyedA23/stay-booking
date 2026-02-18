@@ -1,25 +1,28 @@
-import { useRef } from "react";
-
 export default function Home() {
-  const inputRef = useRef();
-
   return (
-    <section className="text-center py-16 bg-blue-50">
-      <h1 className="text-4xl font-bold mb-4">Discover Unique Stays</h1>
+    <section className="relative h-screen">
+      <img
+        src="https://images.unsplash.com/photo-1505691938895-1758d7feb511"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-      <div className="flex justify-center gap-2">
-        <input
-          ref={inputRef}
-          placeholder="Search city"
-          className="border px-3 py-2"
-        />
+      <div className="absolute inset-0 bg-black/50" />
 
-        <button
-          onClick={() => inputRef.current.focus()}
-          className="bg-blue-600 text-white px-4"
-        >
-          Focus
-        </button>
+      <div className="relative h-full flex items-center">
+        <div className="px-8 md:px-20 text-white">
+          <h1 className="text-6xl font-bold max-w-xl">Escape the ordinary.</h1>
+
+          <p className="mt-6 max-w-md">
+            Discover curated luxury villas and unforgettable stays.
+          </p>
+
+          <a
+            href="/stays"
+            className="mt-8 inline-block bg-white text-black px-8 py-3 rounded-full"
+          >
+            Explore Villas
+          </a>
+        </div>
       </div>
     </section>
   );

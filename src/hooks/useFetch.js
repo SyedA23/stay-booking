@@ -1,33 +1,33 @@
-import { useEffect, useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
-export default function useStays() {
-  const [stays, setStays] = useState([]);
+export const useFetch = (url) => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const loadStays = useCallback(async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       setError("");
 
-      const res = await fetch("/data/stays.json");
+      const res = await fetch(url);
 
       if (!res.ok) {
-        throw new Error("Unable to fetch stays");
+        throw new Error("Server error. Please try again.");
       }
 
-      const data = await res.json();
-      setStays(data);
+      const json = await res.json();
+      setData(json);
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Unexpected error occurred");
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [url]);
 
   useEffect(() => {
-    loadStays();
-  }, [loadStays]);
+    fetchData();
+  }, [fetchData]);
 
-  return { stays, loading, error, retry: loadStays };
-}
+  return { data, loading, error, retry: fetchData };
+};
